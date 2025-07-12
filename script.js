@@ -1,14 +1,12 @@
-function updateTimer() {
+window.addEventListener("DOMContentLoaded", function () {
   const timerElement = document.getElementById("timer");
-  if (!timerElement) return; // prevent error if element not found
 
-  const now = new Date();
-  const dateTimeString = now.toLocaleString();
-  timerElement.textContent = dateTimeString;
-}
+  function updateTimer() {
+    const now = new Date();
+    const dateTimeString = now.toLocaleString(); // e.g., 12/07/2025, 10:45:12 AM
+    timerElement.textContent = dateTimeString;
+  }
 
-window.onload = function () {
-  updateTimer();                  // show immediately
+  updateTimer(); // initial call
   setInterval(updateTimer, 1000); // update every second
-};
-
+});
